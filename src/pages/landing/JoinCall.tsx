@@ -19,7 +19,7 @@ function JoinCall() {
         showToast(getToast('INVALID_CALL_ID'));
       }
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    } catch (err) {
+    } catch (error) {
       showToast(getToast('UNABLE_TO_JOIN_CALL'));
     }
   };
@@ -40,7 +40,7 @@ function JoinCall() {
         value={callId}
         type="text"
         onKeyDown={handleInputKeyDown}
-        placeholder="Enter Call Id"
+        placeholder="Enter Video Meet Id"
         onChange={(e) => setCallId(e.target.value)}
         variant="dark"
         containerClassName="2xl:hidden"
@@ -50,15 +50,22 @@ function JoinCall() {
         value={callId}
         type="text"
         onKeyDown={handleInputKeyDown}
-        placeholder="Enter Call Id"
+        placeholder="Enter Video Meet Id"
         onChange={(e) => setCallId(e.target.value)}
         icon={<FaKeyboard size="1.5em" />}
         variant="dark"
         containerClassName="hidden 2xl:block"
         className="w-full"
       />
-      <Button onClick={joinCall} variant="text" disabled={!callId.trim()}>
-        Join
+      <Button
+        className={
+          !callId.trim() ? 'pointer-events-none' : 'border-2 border-fuchsia-600'
+        }
+        onClick={joinCall}
+        variant="text"
+        disabled={!callId.trim()}
+      >
+        JOIN
       </Button>
     </div>
   );
