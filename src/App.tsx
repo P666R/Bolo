@@ -1,15 +1,15 @@
-import { Toaster } from "@/components/ui/sonner";
-import { useEffect, useState } from "react";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import NetworkDisabled from "./components/functions/NetworkDisabled";
-import CallPage from "./pages/call";
-import LandingPage from "./pages/landing";
-import ErrorPage from "./pages/error";
-import LandscapeNotice from "./components/functions/LandscapeNotice";
+import { Toaster } from '@/components/ui/sonner';
+import { useEffect, useState } from 'react';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import NetworkDisabled from './components/functions/NetworkDisabled';
+import CallPage from './pages/call';
+import LandingPage from './pages/landing';
+import ErrorPage from './pages/error';
+import LandscapeNotice from './components/functions/LandscapeNotice';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     errorElement: <ErrorPage />,
     children: [
       {
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
         element: <LandingPage />,
       },
       {
-        path: "call/:callId",
+        path: 'call/:callId',
         element: <CallPage />,
       },
     ],
@@ -30,8 +30,8 @@ const App = () => {
 
   const handleScreenOrientation = () => {
     if (
-      (screen.orientation.type === "landscape-secondary" ||
-        screen.orientation.type === "landscape-primary") &&
+      (screen.orientation.type === 'landscape-secondary' ||
+        screen.orientation.type === 'landscape-primary') &&
       screen.availWidth < 1024
     ) {
       setIsLandscape(true);
@@ -44,15 +44,15 @@ const App = () => {
     const handleOnline = () => setIsOnline(true);
     const handleOffline = () => setIsOnline(false);
 
-    window.addEventListener("online", handleOnline);
-    window.addEventListener("offline", handleOffline);
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
 
     handleScreenOrientation();
-    screen.orientation.addEventListener("change", handleScreenOrientation);
+    screen.orientation.addEventListener('change', handleScreenOrientation);
 
     return () => {
-      window.removeEventListener("online", handleOnline);
-      window.removeEventListener("offline", handleOffline);
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
     };
   }, []);
 
