@@ -6,26 +6,24 @@ import Button from '../../../components/ui/Button';
 import callService from '../../../lib/callService';
 import { useState } from 'react';
 import Loading from '@/components/ui/Loading';
-import NoiseSupressionControl from '@/components/functions/NoiseSupressionControl';
 
 function CallControl() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
   if (loading) {
-    return <Loading text="Leaving call" />;
+    return <Loading text="Leaving video call" />;
   }
 
   return (
     <div className="flex justify-center gap-4">
-      <NoiseSupressionControl />
       <MicControl />
       <CamControl />
 
       {/* End call control */}
       <Button
         variant="rounded"
-        className="h-16 w-16 bg-red-800 hover:bg-red-700"
+        className="h-16 w-16 bg-red-800 hover:bg-red-700 opacity-40"
         onClick={() => {
           setLoading(true);
           setTimeout(() => {

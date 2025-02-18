@@ -53,8 +53,8 @@ function MicControl() {
       variant="rounded"
       className={
         isMicEnabled
-          ? 'w-16 h-16 bg-zinc-800 hover:bg-zinc-600'
-          : 'w-16 h-16 bg-red-100 hover:bg-red-200'
+          ? 'w-16 h-16 bg-zinc-800 hover:bg-zinc-600 opacity-40'
+          : 'w-16 h-16 bg-slate-400 hover:bg-slate-200 opacity-40'
       }
     >
       {isMicEnabled ? (
