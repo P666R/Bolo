@@ -1,10 +1,10 @@
-import { clsx, type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
+import { clsx, type ClassValue } from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
 const stunServers = {
   iceServers: [
     {
-      urls: ["stun:stun1.l.google.com:19302", "stun:stun2.l.google.com:19302"],
+      urls: ['stun:stun1.l.google.com:19302', 'stun:stun2.l.google.com:19302'],
     },
   ],
 };
@@ -24,13 +24,13 @@ export const createDummyAudioTrack = () => {
 };
 
 export const createDummyVideoTrack = () => {
-  const canvas = document.createElement("canvas"); // Create a canvas element
+  const canvas = document.createElement('canvas'); // Create a canvas element
   canvas.width = 640; // Set width
   canvas.height = 480; // Set height
 
-  const context = canvas.getContext("2d");
+  const context = canvas.getContext('2d');
   if (context) {
-    context.fillStyle = "black"; // Set the color to black (you can change this if needed)
+    context.fillStyle = 'black'; // Set the color to black (you can change this if needed)
     context.fillRect(0, 0, canvas.width, canvas.height); // Fill the canvas with the black color
   }
 
@@ -51,116 +51,117 @@ export const createDummyMediaStream = () => {
   return dummyStream;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const removeUndefinedFields = (obj: Record<string, any>) => {
   Object.keys(obj).forEach((key) => {
     if (obj[key] === undefined) {
       delete obj[key];
     }
   });
-}
+};
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
 type ToastType =
-  | "TITLE"
-  | "TITLE_ERROR"
-  | "DESCRIPTION"
-  | "DESCRIPTION_ERROR"
-  | "UNABLE_TO_CREATE_CALL"
-  | "UNABLE_TO_JOIN_CALL"
-  | "INVALID_CALL_ID"
-  | "INVALID_CALL_LINK"
-  | "CAMERA_ACCESS_DENIED"
-  | "CAMERA_NOT_FOUND"
-  | "MICROPHONE_ACCESS_DENIED"
-  | "MICROPHONE_NOT_FOUND"
-  | "PROVIDE_NAME";
+  | 'TITLE'
+  | 'TITLE_ERROR'
+  | 'DESCRIPTION'
+  | 'DESCRIPTION_ERROR'
+  | 'UNABLE_TO_CREATE_CALL'
+  | 'UNABLE_TO_JOIN_CALL'
+  | 'INVALID_CALL_ID'
+  | 'INVALID_CALL_LINK'
+  | 'CAMERA_ACCESS_DENIED'
+  | 'CAMERA_NOT_FOUND'
+  | 'MICROPHONE_ACCESS_DENIED'
+  | 'MICROPHONE_NOT_FOUND'
+  | 'PROVIDE_NAME';
 
 export const getToast = (type?: ToastType, content?: string) => {
   switch (type) {
-    case "TITLE":
+    case 'TITLE':
       return {
-        title: content ?? "",
+        title: content ?? '',
       };
-    case "TITLE_ERROR":
+    case 'TITLE_ERROR':
       return {
-        title: content ?? "",
+        title: content ?? '',
         isError: true,
       };
-    case "DESCRIPTION":
+    case 'DESCRIPTION':
       return {
-        title: "Something went wrong",
+        title: 'Something went wrong',
         description: content,
       };
-    case "DESCRIPTION_ERROR":
+    case 'DESCRIPTION_ERROR':
       return {
-        title: "Something went wrong",
+        title: 'Something went wrong',
         description: content,
         isError: true,
       };
-    case "UNABLE_TO_CREATE_CALL":
+    case 'UNABLE_TO_CREATE_CALL':
       return {
-        title: "Error creating call",
+        title: 'Error creating call',
         description:
-          "Looks like something went wrong while creating a call for you. Please try again later.",
+          'Looks like something went wrong while creating a call for you. Please try again later.',
         isError: true,
       };
-    case "UNABLE_TO_JOIN_CALL":
+    case 'UNABLE_TO_JOIN_CALL':
       return {
-        title: "Something went wrong",
-        description: content ?? "Unable to join call. Please try again later.",
+        title: 'Something went wrong',
+        description: content ?? 'Unable to join call. Please try again later.',
         isError: true,
       };
-    case "INVALID_CALL_ID":
+    case 'INVALID_CALL_ID':
       return {
-        title: "Uh Oh!",
+        title: 'Uh Oh!',
         description:
           "Looks like no call exists with this Call Id. Please check if you've got the Call Id right.",
         isError: true,
       };
-    case "INVALID_CALL_LINK":
+    case 'INVALID_CALL_LINK':
       return {
-        title: "Uh Oh!",
+        title: 'Uh Oh!',
         description:
           "Looks like no such call exists. Please make sure if you've got the correct link to the call.",
         isError: true,
       };
-    case "CAMERA_ACCESS_DENIED":
+    case 'CAMERA_ACCESS_DENIED':
       return {
-        title: "Camera access denied",
+        title: 'Camera access denied',
         description:
-          "Please provide camera access if you want others to see you in the call",
+          'Please provide camera access if you want others to see you in the call',
         isError: true,
       };
-    case "CAMERA_NOT_FOUND":
+    case 'CAMERA_NOT_FOUND':
       return {
-        title: "No camera device found",
+        title: 'No camera device found',
         description: "You won't be able to share your video in the call",
         isError: true,
       };
-    case "MICROPHONE_ACCESS_DENIED":
+    case 'MICROPHONE_ACCESS_DENIED':
       return {
-        title: "Microphone access denied",
+        title: 'Microphone access denied',
         description:
-          "Please provide microphone access if you want to speak in the call",
+          'Please provide microphone access if you want to speak in the call',
         isError: true,
       };
-    case "MICROPHONE_NOT_FOUND":
+    case 'MICROPHONE_NOT_FOUND':
       return {
-        title: "No microphone device found",
+        title: 'No microphone device found',
         description: "You won't be able to speak  in the call",
         isError: true,
       };
-    case "PROVIDE_NAME":
+    case 'PROVIDE_NAME':
       return {
-        title: "Please provide a name",
+        title: 'Please provide a name',
         isError: true,
       };
     default:
       return {
-        title: "Something went wrong",
+        title: 'Something went wrong',
         isError: true,
       };
   }
