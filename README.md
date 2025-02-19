@@ -1,12 +1,12 @@
-# Bolo - Video Calling Application
+# Bolo - Video Meet Application
 
 ## Setup instruction
 
 ### Clone repo
 
 ```bash
-git clone https://github.com/
-cd x
+git clone https://github.com/P666R/Bolo.git
+cd Bolo
 ```
 
 ### Install dependencies
