@@ -50,7 +50,7 @@ function ParticipantsVideos() {
     >
       {noOfParticipants === 0 && (
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl font-semibold text-center text-neutral-400">
-          There's no one else here. Invite your friends to join!
+          No one else is here, invite your friends to join...
         </div>
       )}
       {Object.keys(participants).map((participantId) => (

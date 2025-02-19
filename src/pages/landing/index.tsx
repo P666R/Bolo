@@ -17,12 +17,12 @@ const LandingPage = () => {
       <div className="grid grid-rows-2 2xl:grid-rows-1 2xl:grid-cols-2 px-4 2xl:px-[6em] h-full">
         <div className="flex flex-col justify-end 2xl:justify-center text-center 2xl:text-start px-16 2xl:px-0 pb-10 2xl:pb-0">
           <h1 className="text-4xl 2xl:text-5xl leading-snug font-medium line">
-            <span className="bg-gradient-to-r from-indigo-400 via-purple-800 to-pink-600 bg-clip-text text-transparent uppercase">
+            <span className="bg-gradient-to-r from-indigo-400 via-purple-800 to-pink-600 bg-clip-text text-transparent uppercase animate-pulse">
               Effortless{' '}
             </span>
             <br />
             Video Calling With{' '}
-            <span className="bg-gradient-to-r from-indigo-400 via-purple-800 to-pink-600 bg-clip-text text-transparent uppercase">
+            <span className="bg-gradient-to-r from-indigo-400 via-purple-800 to-pink-600 bg-clip-text text-transparent uppercase animate-pulse">
               Bolo
             </span>
           </h1>

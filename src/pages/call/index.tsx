@@ -161,11 +161,11 @@ function CallPage() {
   }
 
   if (loading && callExists) {
-    return <Loading text="Joining call" />;
+    return <Loading text="Joining call..." />;
   }
 
   if (loading) {
-    return <Loading text="Please wait. Getting call details" />;
+    return <Loading text="Getting call details..." />;
   }
 
   return (

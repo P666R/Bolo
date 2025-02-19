@@ -12,7 +12,7 @@ function CallControl() {
   const [loading, setLoading] = useState(false);
 
   if (loading) {
-    return <Loading text="Leaving video call" />;
+    return <Loading text="Leaving video call..." />;
   }
 
   return (

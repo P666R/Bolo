@@ -36,9 +36,8 @@ function CallInfo() {
       <span className="text-3xl font-semibold">{callName}</span>
       <div className="hidden md:block border-neutral-500 border-r-2 h-full"></div>
       <div className="hidden md:flex flex-col text-neutral-500">
-        <span className="text-base font-semibold">{callId}</span>
-        <span className="text-xs">
-          Share this Id with your friends to invite them to the call
+        <span className="text-sm">
+          Share ID or URL to invite your friends to the meet:
         </span>
       </div>
       <div className="hidden md:flex gap-3">
@@ -50,7 +49,7 @@ function CallInfo() {
           onClick={handleCopyLink}
           disabled={isLinkCopied}
         >
-          {isLinkCopied ? 'Copied!' : 'Copy link'}
+          {isLinkCopied ? 'Copied!' : 'Copy URL'}
         </Button>
       </div>
       <div className="flex md:hidden gap-3 pr-5">

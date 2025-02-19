@@ -30,13 +30,12 @@ function ParticipantsDetails() {
   } else if (status === 'error') {
     content = 'Could not get participants details';
   } else if (participantsInCall.length === 0) {
-    content = 'No participant(s) in the call.';
+    content = 'No participants in the call';
   } else {
-    content = `There are already ${participantsInCall.length} participants in the call`;
+    content = `There are ${participantsInCall.length} participants in the call`;
   }
 
   return (
-    // h-12 is added to fix height change during shift from loading to content
     <div className="flex items-center h-12 text-neutral-400">{content}</div>
   );
 }

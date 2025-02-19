@@ -31,7 +31,6 @@ function CallStarterScreen({ handleJoin }: Readonly<CallStarterScreenProps>) {
         <div className="my-5">
           <ParticipantsDetails />
         </div>
-        {/* <div className="my-5 block w-3/5 border-b border-zinc-700"></div> */}
         <div className="mb-12">
           <UserNameInput
             userName={userName}
@@ -54,7 +53,9 @@ function CallStarterScreen({ handleJoin }: Readonly<CallStarterScreenProps>) {
 
       {/* Large devices - after md */}
       <div className="hidden lg:flex flex-col h-full w-3/5 xl:w-1/2 mx-auto justify-center items-center pt-8 gap-16">
-        <h2 className="text-4xl font-bold">Set up your Call Details</h2>
+        <h2 className="text-4xl font-bold capitalize">
+          Your Video Call Details
+        </h2>
         <div className="h-1/2 w-full flex flex-row items-center justify-center gap-28">
           <div className="relative h-full w-2/3">
             <SelfVideoPreview />
@@ -70,7 +71,9 @@ function CallStarterScreen({ handleJoin }: Readonly<CallStarterScreenProps>) {
           </div>
         </div>
         <div className="flex flex-col items-center gap-4">
-          <span className="text-xl font-semibold">Ready to join?</span>
+          <span className="text-xl font-semibold capitalize">
+            Proceed to meet
+          </span>
           <Button
             className="w-28"
             onClick={() => {

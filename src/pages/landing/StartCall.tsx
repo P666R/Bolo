@@ -34,7 +34,7 @@ function StartCall() {
   };
 
   if (loading) {
-    return <Loading text="Creating a video call for you..." />;
+    return <Loading text="Creating a video meet for you..." />;
   }
 
   return (

@@ -29,8 +29,8 @@ function UserNameInput({
 
   return (
     <div className="flex flex-col items-center gap-3">
-      <h3 className="text-xl md:text-2xl font-medium">
-        What should we call you?
+      <h3 className="text-xl md:text-2xl font-medium capitalize">
+        Your username
       </h3>
       <Input
         ref={inputRef}
